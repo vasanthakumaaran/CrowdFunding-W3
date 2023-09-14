@@ -5,7 +5,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import {ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
-import "./styles/globals.css";
+// import "./styles/globals.css";
 import { ReactDOM } from "react-dom/client";
 import {BrowserRouter as Router} from "react-router-dom"
 // This is the chain your dApp will work on.
@@ -23,7 +23,7 @@ root.render(
         desiredChainId={ChainId.Polygon}
     >
       <Router>
-      <App />
+      <Index />
       </Router>
     </ThirdwebProvider>
   </React.StrictMode>
