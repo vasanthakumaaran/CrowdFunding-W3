@@ -67,7 +67,7 @@ const CreateCampaign = () => {
                             labelName= "Your Name *"
                             placeholder="Nelson"
                             inputType="text"
-                            value={form.name}
+                            value={form.target}
 
                             handleChange={(e)=>handleFormFieldChange('name',e)} 
 
@@ -89,7 +89,7 @@ const CreateCampaign = () => {
                             placeholder="Write your story"
                             isTextArea
                             value={form.description}
-                            handleChange={(e)=>{handleFormFieldChange('description',e)}} 
+                            handleChange={()=>{}} 
 
                         />
 
@@ -105,7 +105,7 @@ const CreateCampaign = () => {
                             inputType="text"
                             value={form.target}
 
-                            handleChange={(e)=>handleFormFieldChange('target',e)} 
+                            handleChange={(e)=>handleFormFieldChange('title',e)} 
 
                         />
                         <FormField

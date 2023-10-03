@@ -49,7 +49,7 @@ const Navbar = () => {
                                  
 
                                  <div className={`absolute top-[60px] right-0 left-0 bg-[#1c1c24] z-10 shadow-secondary py-4
-                                                  ${!toggleDrawer}?'-translate-y-[100vh]':'translate-y-[0]'
+                                                  ${!toggleDrawer?'-translate-y-[100vh]':'translate-y-0'}
                                                   transtition-all duration-700`}>
                                                     <ul className='mb-4'>
                                                       {navlinks.map((link)=>(
@@ -90,7 +90,7 @@ const Navbar = () => {
 
 
                           <img src={menu} alt="menu" className='w-[34px] h-[34px] object-contain cursor-pointer' 
-                                 onClick={()=>setToggleDrawer(!toggleDrawer)}
+                                 onClick={()=>setToggleDrawer((prev)=>!prev)}
                                  />
                  </div>
 

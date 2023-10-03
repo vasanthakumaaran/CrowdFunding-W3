@@ -1,4 +1,5 @@
 import Index from "./index";
+import { StateContextProvider } from "./context";
 
 
 import React from "react";
@@ -23,7 +24,9 @@ root.render(
         desiredChainId={ChainId.Polygon}
     >
       <Router>
+        <StateContextProvider>
       <Index />
+        </StateContextProvider>
       </Router>
     </ThirdwebProvider>
   </React.StrictMode>
