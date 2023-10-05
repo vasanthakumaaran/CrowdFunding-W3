@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import { Link,useNavigate } from 'react-router-dom'
+import { useStateContext } from '../context'
 
 import CustomButton from './CustomButton'
 import {logo,search,menu,thirdweb} from "../assets"
@@ -9,9 +10,10 @@ const Navbar = () => {
        
           const navigate = useNavigate();
           const [isActive,setIsActive] = useState('dashboard');
-          const [toggleDrawer, setToggleDrawer] = useState(false);   
+          const [toggleDrawer, setToggleDrawer] = useState(false);
+          const {connect,address} = useStateContext()   
 
-          const address = "0xabc"
+          
 
   return (
     //mobile device or medium device
@@ -30,7 +32,7 @@ const Navbar = () => {
                        styles = {address?'bg-[#1dc071]':'bg-[#8c6dfd]'}
                        handleClick={()=>{
                          if(address) navigate ('create-campaign')
-                         else 'Connect()'
+                         else connect()
                        }}/>
                             
                             <Link to="/profile">
@@ -44,7 +46,7 @@ const Navbar = () => {
                           
                           <div className='w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center cursor-pointer'>
                           
-                                 <img src={thirdweb} alt="user" className='w-[60%] h-[100%] object-contain' />
+                                 <img src={logo} alt="user" className='w-[60%] h-[100%] object-contain' />
                           
                                  
 
@@ -81,7 +83,7 @@ const Navbar = () => {
                                                          styles = {address?'bg-[#1dc071]':'bg-[#8c6dfd]'}
                                                          handleClick={()=>{
                                                            if(address) navigate ('create-campaign')
-                                                           else 'Connect()'
+                                                           else connect()
                                                          }}/>                                  
                                                     </div>
                                                   </div>
